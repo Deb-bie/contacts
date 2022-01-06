@@ -1,24 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './navbar.css'
+import './navbar.css';
+import {FaBars, FaTimes} from 'react-icons/fa';
 
 
 
 const Navbar = () => {
+
+    const [click, setClick] = useState(false);
+
+    const handleClick = () => setClick(!click);
+
+
+
     return (
         <nav>
             <div className='nav-container'>
                 <div className='logo'>
-                    <h2>myContacts</h2>
+
+                    <h2>
+                        <Link to='/' className='logo-link' onClick={handleClick}>myContacts</Link>
+                    </h2>
+                    
                 </div>
 
-                <div className='button-container'>
-                    <div className="nav-button">
-                        <Link to="/signup" className="nav-btn-link" >Sign Up</Link>
+                <div className="navbar-icon" onClick={handleClick}>
+                    {click ? <FaTimes /> : <FaBars />}
+                </div>
+
+                <div className={click ? "button-container active" : "button-container"}>
+                    <div 
+                        // className={click ? "nav-button active" : "nav-button"}
+                        className="nav-button" onClick={handleClick}
+                    >
+                        <Link to="/add" className="nav-btn-link" onClick={handleClick} >Get Started</Link>
                     </div>
 
-                    <div className="nav-button">
-                        <Link to="/signin" className="nav-btn-link" >Sign In</Link>
+                    <div 
+                        className="nav-button" onClick={handleClick}
+                    >
+                        <Link to="/view" className="nav-btn-link">View Contacts</Link>
                     </div>
                 </div>
             </div>
