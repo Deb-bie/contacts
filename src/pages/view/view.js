@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { DataGrid } from "@material-ui/data-grid";
 import Navbar from '../../components/navbar/navbar';
-import { DeleteOutline, EditOutlined } from "@material-ui/icons";
-import { useNavigate } from "react-router-dom";
+import { DeleteOutline, EditOutlined, PageviewOutlined } from "@material-ui/icons";
+import { useNavigate, Link } from "react-router-dom";
 import './view.css'
 
 
@@ -12,6 +12,8 @@ const View = () => {
   const navigate = useNavigate();
 
   const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('data')));
+
+  console.log(contacts.length)
   
   const handleEdit = async(id, name, number) => {
       navigate("/view/" + id, {
@@ -22,6 +24,17 @@ const View = () => {
         }
       })
   }
+
+
+  const handleView = async(id, name, number) => {
+    navigate("/contact/" + id, {
+      state: {
+        id: id,
+        name: name,
+        number: number,
+      }
+    })
+}
 
 
     const handleDelete = (number) => {
@@ -73,6 +86,26 @@ const View = () => {
           field: "phoneNumber",
           headerName: "Phone Number",
           width: 200,
+        },
+
+        {
+          field: "details",
+          headerName: "Details",
+          width: 120,
+
+          renderCell: (params) => {
+            return (
+                <PageviewOutlined style={{color: "blue"}}
+                onClick={() => 
+                  handleView(
+                    params.row.id, 
+                    params.row.name,
+                    params.row.phoneNumber, 
+                )}
+                
+                />
+            );
+          },
         },
 
         {
@@ -131,13 +164,22 @@ const View = () => {
             <div className="mains">
               <div className="wrapper">
                 <div className="data-styles">
-                  <DataGrid 
-                  rowHeight={80}
-                  rows={rows}
-                  columns={columns}
-                  pageSize={5}
-                  checkboxSelection
-                  />
+                  {contacts.length > 0 && (
+                    <DataGrid 
+                    rowHeight={70}
+                    rows={rows}
+                    columns={columns}
+                    pageSize={5}
+                    checkboxSelection
+                    />
+                  )}
+
+                  {contacts.length < 1 && (
+                    <p style={{alignItems: "center", justifyContent: "center", display: "flex", marginTop: "100px"}}
+                    >There are no contacts yet, please click  &nbsp;
+                      <Link to='/add'>here</Link> 
+                      &nbsp; to add contacts</p>
+                  )}
                 </div>
               </div>
             </div>          

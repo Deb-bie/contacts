@@ -9,6 +9,8 @@ const Edit = () => {
 
     const navigate = useNavigate();
 
+    // changing the data back to an object form
+
     const contacts = JSON.parse(localStorage.getItem('data'));
 
     const [name, setName] = useState(location.state.name);
@@ -24,6 +26,8 @@ const Edit = () => {
             name,
             number
         }
+
+        // setting the key at contacts with an id of x to contact
 
         contacts[x] = contact
 
@@ -47,6 +51,8 @@ const Edit = () => {
 
                 <div className='input-container'>
                     <form onSubmit={handleUpdate} >
+                    <label>Full Name</label>
+                    <br />
                     <input 
                         type='text'
                         value={name} 
@@ -57,6 +63,9 @@ const Edit = () => {
                     />
 
                     <br /><br />
+
+                    <label>Phone Number</label>
+                    <br />
 
                     <input 
                         type='phone'
@@ -70,7 +79,7 @@ const Edit = () => {
                     <br /><br />
 
                     <div className='submit-button'>
-                        <input type='submit' value='Update' className='submit' />
+                        <input type='submit' value='Save' className='submit' />
                     </div>
 
                     

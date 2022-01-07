@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar/navbar';
 import './add.css'
 
 
 const Add = () => {
-
-    const navigate = useNavigate();
     const [contacts, setContacts] = useState([]);
 
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
-    const [id, setId] = useState();
     
 
 
@@ -22,13 +18,11 @@ const Add = () => {
             name,
             number,
         }
-
         setContacts([...contacts, contact]);
 
-
+        // setting name and number to empty strings after adding their values to contacts
         setName('');
         setNumber('');
-        // navigate("/view")
     }
 
     useEffect(()=>{
@@ -40,6 +34,8 @@ const Add = () => {
          }
         
     },[])
+
+    // persisting data into local storage
         
     useEffect(()=>{
     
@@ -63,6 +59,8 @@ const Add = () => {
 
                     <div className="input-container">
                         <form onSubmit={handleSubmit}>
+                            <label>Full Name</label>
+                            <br />
                             <input 
                                 type='text'
                                 name='name'
@@ -75,8 +73,10 @@ const Add = () => {
 
                             <br /><br />
 
+                            <label>Phone Number</label>
+                            <br />
                             <input 
-                                type='phone'
+                                type='tel'
                                 name='number'
                                 value={number} 
                                 required
