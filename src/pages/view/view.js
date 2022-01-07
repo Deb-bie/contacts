@@ -51,7 +51,7 @@ const View = () => {
         {
           field: "name",
           headerName: "Name",
-          width: 160,
+          width: 200,
           renderCell: (cellValues) => {
             return (
               <div
@@ -72,7 +72,7 @@ const View = () => {
           field: "phoneNumber",
           headerName: "Phone Number",
           type: "number",
-          width: 120,
+          width: 260,
           align: "center"
         },
 
@@ -82,7 +82,7 @@ const View = () => {
           width: 120,
           renderCell: (params) => {
             return (
-                <EditOutlined className="productListEdit" 
+                <EditOutlined style={{color: "green"}}
                 onClick={() => 
                   handleEdit(
                     params.row.id, 
@@ -102,8 +102,7 @@ const View = () => {
           width: 120,
           renderCell: (params) => {
             return (
-              <DeleteOutline
-                className="productListDelete"
+              <DeleteOutline style={{color: "red"}}
                 onClick={() => handleDelete(params.row.phoneNumber)}
               />
             );
@@ -133,7 +132,7 @@ const View = () => {
             
             <div style={{ height: 500, margin: "40px",}}>
                 <DataGrid 
-                rowHeight={100}
+                rowHeight={80}
                 rows={rows}
                 columns={columns}
                 pageSize={5}
