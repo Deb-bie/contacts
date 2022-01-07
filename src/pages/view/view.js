@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { DataGrid } from "@material-ui/data-grid";
 import Navbar from '../../components/navbar/navbar';
 import { DeleteOutline, EditOutlined } from "@material-ui/icons";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import './view.css'
 
 
 
@@ -45,7 +46,7 @@ const View = () => {
         {
           field: "id",
           headerName: "ID",
-          width: 90,
+          width: 120,
         },
     
         {
@@ -71,9 +72,7 @@ const View = () => {
         {
           field: "phoneNumber",
           headerName: "Phone Number",
-          type: "number",
-          width: 260,
-          align: "center"
+          width: 200,
         },
 
         {
@@ -127,18 +126,22 @@ const View = () => {
 
     return (
         <div>
-
             <Navbar />
+
+            <div className="mains">
+              <div className="wrapper">
+                <div className="data-styles">
+                  <DataGrid 
+                  rowHeight={80}
+                  rows={rows}
+                  columns={columns}
+                  pageSize={5}
+                  checkboxSelection
+                  />
+                </div>
+              </div>
+            </div>          
             
-            <div style={{ height: 500, margin: "40px",}}>
-                <DataGrid 
-                rowHeight={80}
-                rows={rows}
-                columns={columns}
-                pageSize={5}
-                checkboxSelection
-                />
-            </div>
         </div>
     )
 }

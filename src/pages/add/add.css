@@ -1,6 +1,4 @@
 .main{
-    /* background: linear-gradient(to right bottom, #e1b382, #c89666); */
-    /* background: goldenrod; */
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -23,7 +21,6 @@
 
 .header{
     color: #fff;
-    /* color: goldenrod; */
     text-align: center;
     margin: 30px 0;
 }

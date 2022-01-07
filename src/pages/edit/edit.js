@@ -1,16 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-
-const getData=()=>{
-    const data = localStorage.getItem('data');
-    if(data){
-        return JSON.parse(data);
-    }
-    else{
-        return []
-    }
-}
 
 
 const Edit = () => {

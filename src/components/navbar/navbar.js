@@ -30,10 +30,9 @@ const Navbar = () => {
 
                 <div className={click ? "button-container active" : "button-container"}>
                     <div 
-                        // className={click ? "nav-button active" : "nav-button"}
                         className="nav-button" onClick={handleClick}
                     >
-                        <Link to="/add" className="nav-btn-link" onClick={handleClick} >Get Started</Link>
+                        <Link to="/add" className="nav-btn-link" onClick={handleClick} >Add Contacts</Link>
                     </div>
 
                     <div 
