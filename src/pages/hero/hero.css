@@ -129,5 +129,37 @@ img{
 }
 
 
-
+@media screen and (max-width: 450px) {
+    .main-content{
+        padding: 2px 12px;
+        overflow: hidden;
+    }
+    
+    .title{
+        font-size: 24px;
+    }
+    
+    .p{
+        margin-top: 24px;
+        color: #866000;
+        font-size: 12px;
+        text-align: center;
+        width: 60%;
+        overflow-x: hidden;
+    }
+    
+    
+    .hero-btn{
+        /* margin-top: 24px; */
+        overflow: hidden;
+    }
+    
+    .button{
+        border-radius: 50px;
+        white-space: wrap;
+        padding: 6px 6px;
+        font-size: 12px;
+        overflow: hidden;
+    }
+}
 

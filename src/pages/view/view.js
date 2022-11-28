@@ -4,6 +4,8 @@ import Navbar from '../../components/navbar/navbar';
 import { DeleteOutline, EditOutlined, PageviewOutlined } from "@material-ui/icons";
 import { useNavigate, Link } from "react-router-dom";
 import './view.css'
+// import { db } from '../../firebase/Firebase.js';
+// import { collection, onSnapshot, doc, deleteDoc } from "firebase/firestore"; 
 
 
 
@@ -13,6 +15,21 @@ const View = () => {
 
   const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('data')));
 
+
+//   const [contacts, setContacts] = useState([]);
+
+//   useEffect(() => {
+//     const unsub = onSnapshot(collection(db, "Reminders", "All_Reminders","Reminder"), 
+//     (snapshot) => {
+
+//         setContacts(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+//     });
+
+//     return unsub;
+// }, []);
+  
+  
+  
   console.log(contacts.length)
   
   const handleEdit = async(id, name, number) => {

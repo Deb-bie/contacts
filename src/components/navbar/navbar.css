@@ -9,7 +9,6 @@ nav{
     z-index: 10;
 }
 
-
 .nav-container{
     display: flex;
     justify-content: space-between;
@@ -17,7 +16,6 @@ nav{
     z-index: 1;
     width: 100%;
 }
-
 
 .logo{
     font-size: 24px;
@@ -30,7 +28,6 @@ nav{
     margin-left: 40px;
 }
 
-
 .logo-link{
     color: goldenrod;
     display: flex;
@@ -38,19 +35,15 @@ nav{
     text-decoration: none;
 }
 
-
 .navbar-icon{
     display: none;
 }
 
-
 .button-container{
-  
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
-
 
 .nav-button{
     display: flex;
@@ -80,30 +73,29 @@ nav{
 
 
 
-
 @media screen and (max-width: 960px) {
     nav{
         display: flex;
     }
 
+    .logo{
+        margin-left: 0px
+    }
+
     .nav-container{
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
+        align-content: center;
+        padding: 20px;
     }
-
 
     .navbar-icon{
         display: flex;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
         color: goldenrod;
     }
-
 
     .button-container{
         display: flex;
@@ -119,17 +111,14 @@ nav{
         padding-top: 120px;
     }
 
-
     .button-container.active{
         border-block-color: transparent;
-        /* background: #1f5156; */
         background: #000;
         top: 60px;
         left: 0px;
         opacity: 1;
         z-index: 1;
     }
-
 
     .nav-btn-link{
         margin-bottom: 1rem;
@@ -150,3 +139,14 @@ nav{
 }
 
 
+
+@media screen and (max-width: 450px) {
+
+    .logo{
+        font-size: 14px;
+    }
+
+    .navbar-icon{
+        font-size: 14px;
+    }
+}

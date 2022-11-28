@@ -1,0 +1,9 @@
+.home{
+    background: url(../../assets/bg/p1.jpg);
+    /* width: 100%; */
+    /* height: 100%; */
+    -o-object-fit: contain;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    /* background: #232a34; */
+}

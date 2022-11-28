@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../../components/navbar/navbar';
 import Hero from '../hero/hero';
 
+import "./home.css"
 
 
 

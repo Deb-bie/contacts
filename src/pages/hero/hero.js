@@ -10,7 +10,7 @@ const Hero = () => {
     return (
         <div className="main-container">
             <div className="main-background">
-                <img src={Background} />
+                <img src={Background} alt="background" />
             </div>
 
             <div className="main-content">
@@ -31,18 +31,3 @@ const Hero = () => {
 }
 
 export default Hero
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
